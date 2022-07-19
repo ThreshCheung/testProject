@@ -86,3 +86,90 @@
   color: #fff;
   border: none;
 }
+#wrappper #header .headBottom .headBottomMain .search input::-webkit-input-placeholder {
+  color: yellowgreen;
+}
+#wrappper #navWrap {
+  border-bottom: 2px solid #e1251b;
+}
+#wrappper #navWrap .navWrapMain {
+  width: 1200px;
+  margin: 0 auto;
+}
+#wrappper #navWrap .navWrapMain::after {
+  clear: both;
+  display: block;
+  content: '';
+}
+#wrappper #navWrap .navWrapMain a {
+  margin: 0px 22px;
+  font-size: 16px;
+  color: #333;
+  float: left;
+  line-height: 50px;
+}
+#wrappper #navWrap .navWrapMain a:first-child {
+  width: 210px;
+  height: 50px;
+  background-color: #e1251b;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold ;
+  float: left;
+  text-align: center;
+  line-height: 50px;
+}
+#wrappper #content .contentMain {
+  width: 1200px;
+  margin: 15px auto 0 auto;
+}
+#wrappper #content .contentMain #navPath {
+  font-size: 0px;
+  padding: 9px 15px 9px 0px;
+}
+#wrappper #content .contentMain #navPath a {
+  font-size: 12px;
+}
+#wrappper #content .contentMain #navPath i {
+  padding: 0 5px;
+  font-size: 12px;
+}
+#wrappper #content .contentMain #center {
+  margin: 5px 0 15px;
+}
+#wrappper #content .contentMain #center #left {
+  width: 400px;
+  float: left;
+}
+#wrappper #content .contentMain #center #left #leftTop {
+  position: relative;
+  width: 400px;
+}
+#wrappper #content .contentMain #center #left #leftTop #smallPic {
+  width: 400px;
+  height: 400px;
+  border: 1px solid #dfdfdf;
+  position: relative;
+}
+#wrappper #content .contentMain #center #left #leftTop #smallPic .mask {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #ddd;
+  background: rgba(255, 255, 255, 0.5);
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+#wrappper #content .contentMain #center #left #leftTop #bigPic {
+  width: 400px;
+  height: 400px;
+  left: 420px;
+  top: 0px;
+  position: absolute;
+  border: 1px solid #ddd;
+  overflow: hidden;
+}
+#wrappper #content .contentMain #center #left #leftTop #bigPic img {
+  width: 800px;
+  height: 800px;
+}

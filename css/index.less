@@ -80,9 +80,97 @@
                             color: #fff;
                             border: none;
                         }
+                        &::-webkit-input-placeholder{
+                            color: yellowgreen;
+                        }
                     }
                 }
             }
         }
     }
+    #navWrap{
+        border-bottom: 2px solid #e1251b;
+        .navWrapMain{
+            width: 1200px;
+            margin: 0 auto;
+            .clearfix();
+            a{
+                margin: 0px 22px;
+                font-size: 16px;
+                color: #333;
+                float: left;
+                line-height: 50px;
+                &:first-child{
+                    width: 210px;
+                    height: 50px;
+                    background-color: #e1251b;
+                    color: #fff;
+                    font-size: 14px;
+                    font-weight: bold ;
+                    float: left;
+                    text-align: center;
+                    line-height: 50px;
+                }
+            }
+        }
+    }
+    #content{
+        .contentMain{
+            width: 1200px;
+            margin: 15px auto 0 auto;
+            #navPath{
+                font-size: 0px;
+                padding: 9px 15px 9px 0px;
+                a{
+                    font-size: 12px;
+                }
+                i{
+                    padding: 0 5px;
+                    font-size: 12px;
+                }
+            }
+            #center{
+                margin: 5px 0 15px;
+                #left{
+                    width: 400px;
+                    float: left;
+                    #leftTop{
+                        position: relative;
+                        width: 400px;
+                        #smallPic{
+                            width: 400px;
+                            height: 400px;
+                            border: 1px solid #dfdfdf;
+                            position: relative;
+                            img{}
+                            .mask{
+                                width: 200px;
+                                height: 200px;
+                                border: 1px solid #ddd;
+                                background: rgba(255, 255, 255, .5);
+                                left: 0px;
+                                top: 0px;
+                                position: absolute;
+                            }
+                        }
+                        #bigPic{
+                            width: 400px;
+                            height: 400px;
+                            left: 420px;
+                            top: 0px;
+                            position: absolute;
+                            border: 1px solid #ddd;
+                            overflow: hidden;
+                            img{
+                                width: 800px;
+                                height: 800px;
+                            }
+                        }
+                    }
+                }
+                #right{}
+            }
+        }
+    }
+
 }
