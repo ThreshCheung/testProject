@@ -114,7 +114,7 @@
   background-color: #e1251b;
   color: #fff;
   font-size: 14px;
-  font-weight: bold ;
+  font-weight: bold;
   float: left;
   text-align: center;
   line-height: 50px;
@@ -172,4 +172,53 @@
 #wrappper #content .contentMain #center #left #leftTop #bigPic img {
   width: 800px;
   height: 800px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+#wrappper #content .contentMain #center #left #leftBottom {
+  width: 400px;
+  margin-top: 5px;
+}
+#wrappper #content .contentMain #center #left #leftBottom::after {
+  clear: both;
+  display: block;
+  content: '';
+}
+#wrappper #content .contentMain #center #left #leftBottom a {
+  width: 10px;
+  height: 54px;
+  border: 1px solid #ccc;
+  background: #ebebeb;
+  text-align: center;
+  line-height: 54px;
+  float: left;
+}
+#wrappper #content .contentMain #center #left #leftBottom a:first-child {
+  margin-right: 4px;
+}
+#wrappper #content .contentMain #center #left #leftBottom #picList {
+  float: left;
+  width: 372px;
+  height: 56px;
+  overflow: hidden;
+  position: relative;
+}
+#wrappper #content .contentMain #center #left #leftBottom #picList ul {
+  white-space: nowrap;
+  font-size: 0px;
+  position: absolute;
+  left: 0px;
+}
+#wrappper #content .contentMain #center #left #leftBottom #picList ul li {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ccc;
+  padding: 2px;
+  margin-right: 20px;
+  display: inline-block;
+}
+#wrappper #content .contentMain #center #left #leftBottom #picList ul li img {
+  width: 50px;
+  height: 50px;
 }

@@ -1,24 +1,30 @@
-@import './mixins/clear.less';
-#wrappper{
-    #header{
-        .headTop{
+@import "./mixins/clear.less";
+
+#wrappper {
+    #header {
+        .headTop {
             background-color: #eaeaea;
             height: 30px;
-            .headTopMain{
+
+            .headTopMain {
                 width: 1200px;
                 margin: 0 auto;
                 line-height: 30px;
                 .clearfix();
-                .left{
+
+                .left {
                     float: left;
-                    h5{
+
+                    h5 {
                         float: left;
                         margin-right: 5px;
                     }
-                    p{
+
+                    p {
                         float: left;
-                        a{
-                            &:first-child{
+
+                        a {
+                            &:first-child {
                                 border-right: 1px solid #b3aeae;
                                 padding-right: 5px;
                                 margin-right: 0px;
@@ -26,16 +32,20 @@
                         }
                     }
                 }
-                .right{
+
+                .right {
                     float: right;
-                    nav{
+
+                    nav {
                         font-size: 0px;
-                        a{
+
+                        a {
                             font-size: 12px;
                             margin-right: 10px;
                             padding-right: 10px;
                             border-right: 1px solid #b3aeae;
-                            &:last-child{
+
+                            &:last-child {
                                 border: none;
                                 margin-right: 0px;
                                 padding-right: 0px;
@@ -45,34 +55,40 @@
                 }
             }
         }
-        .headBottom{
-            .headBottomMain{
+
+        .headBottom {
+            .headBottomMain {
                 width: 1200px;
                 margin: 0 auto;
                 .clearfix();
-                .logo{
+
+                .logo {
                     float: left;
-                    a{
-                        img{
+
+                    a {
+                        img {
                             width: 175px;
                             height: 56px;
                             margin: 25px 45px;
                         }
                     }
                 }
-                .search{
+
+                .search {
                     float: right;
                     margin-top: 35px;
-                    input{
-                        &:first-child{
-                            box-sizing:border-box;
+
+                    input {
+                        &:first-child {
+                            box-sizing: border-box;
                             width: 490px;
                             height: 32px;
                             padding: 0px 4px;
                             border: 3px solid #ea4a36;
                             float: left;
                         }
-                        &:last-child{
+
+                        &:last-child {
                             width: 68px;
                             height: 32px;
                             background-color: #ea4a36;
@@ -80,7 +96,8 @@
                             color: #fff;
                             border: none;
                         }
-                        &::-webkit-input-placeholder{
+
+                        &::-webkit-input-placeholder {
                             color: yellowgreen;
                         }
                     }
@@ -88,25 +105,29 @@
             }
         }
     }
-    #navWrap{
+
+    #navWrap {
         border-bottom: 2px solid #e1251b;
-        .navWrapMain{
+
+        .navWrapMain {
             width: 1200px;
             margin: 0 auto;
             .clearfix();
-            a{
+
+            a {
                 margin: 0px 22px;
                 font-size: 16px;
                 color: #333;
                 float: left;
                 line-height: 50px;
-                &:first-child{
+
+                &:first-child {
                     width: 210px;
                     height: 50px;
                     background-color: #e1251b;
                     color: #fff;
                     font-size: 14px;
-                    font-weight: bold ;
+                    font-weight: bold;
                     float: left;
                     text-align: center;
                     line-height: 50px;
@@ -114,46 +135,57 @@
             }
         }
     }
-    #content{
-        .contentMain{
+
+    #content {
+        .contentMain {
             width: 1200px;
             margin: 15px auto 0 auto;
-            #navPath{
+
+            #navPath {
                 font-size: 0px;
                 padding: 9px 15px 9px 0px;
-                a{
+
+                a {
                     font-size: 12px;
                 }
-                i{
+
+                i {
                     padding: 0 5px;
                     font-size: 12px;
                 }
             }
-            #center{
+
+            #center {
                 margin: 5px 0 15px;
-                #left{
+
+                #left {
                     width: 400px;
                     float: left;
-                    #leftTop{
+
+                    #leftTop {
                         position: relative;
                         width: 400px;
-                        #smallPic{
+
+                        #smallPic {
                             width: 400px;
                             height: 400px;
                             border: 1px solid #dfdfdf;
                             position: relative;
-                            img{}
-                            .mask{
+
+                            img {}
+
+                            .mask {
                                 width: 200px;
                                 height: 200px;
                                 border: 1px solid #ddd;
-                                background: rgba(255, 255, 255, .5);
+                                background: rgba(255, 255, 255, 0.5);
                                 left: 0px;
                                 top: 0px;
                                 position: absolute;
                             }
                         }
-                        #bigPic{
+
+                        #bigPic {
                             width: 400px;
                             height: 400px;
                             left: 420px;
@@ -161,16 +193,67 @@
                             position: absolute;
                             border: 1px solid #ddd;
                             overflow: hidden;
-                            img{
+
+                            img {
                                 width: 800px;
                                 height: 800px;
+                                position: absolute;
+                                left: 0px;
+                                top: 0px;
+                            }
+                        }
+                    }
+
+                    #leftBottom {
+                        width: 400px;
+                        margin-top: 5px;
+                        .clearfix();
+
+                        a {
+                            width: 10px;
+                            height: 54px;
+                            border: 1px solid #ccc;
+                            background: #ebebeb;
+                            text-align: center;
+                            line-height: 54px;
+                            float: left;
+
+                            &:first-child {
+                                margin-right: 4px;
+                            }
+                        }
+
+                        #picList {
+                            float: left;
+                            width: 372px;
+                            height: 56px;
+                            overflow: hidden;
+                            position: relative;
+
+                            ul {
+                                white-space: nowrap;
+                                font-size: 0px;
+                                position: absolute;
+                                left: 0px;
+                                li {
+                                    width: 50px;
+                                    height: 50px;
+                                    border: 1px solid #ccc;
+                                    padding: 2px;
+                                    margin-right: 20px;
+                                    display: inline-block;
+                                    img {
+                                        width: 50px;
+                                        height: 50px;
+                                    }
+                                }
                             }
                         }
                     }
                 }
-                #right{}
+
+                #right {}
             }
         }
     }
-
 }
