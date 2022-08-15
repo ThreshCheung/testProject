@@ -137,6 +137,11 @@
 #wrappper #content .contentMain #center {
   margin: 5px 0 15px;
 }
+#wrappper #content .contentMain #center::after {
+  clear: both;
+  display: block;
+  content: '';
+}
 #wrappper #content .contentMain #center #left {
   width: 400px;
   float: left;
@@ -209,6 +214,7 @@
   font-size: 0px;
   position: absolute;
   left: 0px;
+  transition: 0.5s;
 }
 #wrappper #content .contentMain #center #left #leftBottom #picList ul li {
   width: 50px;
@@ -221,4 +227,159 @@
 #wrappper #content .contentMain #center #left #leftBottom #picList ul li img {
   width: 50px;
   height: 50px;
+}
+#wrappper #content .contentMain #center #right {
+  width: 700px;
+  float: right;
+}
+#wrappper #content .contentMain #center #right .rightTop h3 {
+  font-size: 14px;
+  line-height: 21px;
+  margin-top: 15px;
+}
+#wrappper #content .contentMain #center #right .rightTop > p {
+  color: #e12228;
+  margin-top: 15px;
+}
+#wrappper #content .contentMain #center #right .rightTop .priceWrap {
+  margin-top: 10px;
+  line-height: 28px;
+  background-color: #fee9ec;
+  padding: 7px;
+}
+#wrappper #content .contentMain #center #right .rightTop .priceWrap .priceTop::after {
+  clear: both;
+  display: block;
+  content: '';
+}
+#wrappper #content .contentMain #center #right .rightTop .priceWrap .priceTop > span {
+  margin-right: 15px;
+  float: left;
+}
+#wrappper #content .contentMain #center #right .rightTop .priceWrap .priceTop .price {
+  color: #cc1122;
+}
+#wrappper #content .contentMain #center #right .rightTop .priceWrap .priceTop .price > span {
+  font-size: 16px;
+  float: left;
+}
+#wrappper #content .contentMain #center #right .rightTop .priceWrap .priceTop .price p {
+  font-size: 24px;
+  float: left;
+  font-weight: bold;
+}
+#wrappper #content .contentMain #center #right .rightTop .priceWrap .priceTop .price i {
+  font-size: 12px;
+  float: left;
+}
+#wrappper #content .contentMain #center #right .rightTop .priceWrap .priceTop p > span {
+  float: right;
+}
+#wrappper #content .contentMain #center #right .rightTop .priceWrap .priceBottom::after {
+  clear: both;
+  display: block;
+  content: '';
+}
+#wrappper #content .contentMain #center #right .rightTop .priceWrap .priceBottom > span {
+  float: left;
+  margin-right: 15px;
+}
+#wrappper #content .contentMain #center #right .rightTop .priceWrap .priceBottom p {
+  width: 520px;
+  line-height: 28px;
+  float: left;
+}
+#wrappper #content .contentMain #center #right .rightTop .priceWrap .priceBottom p > span {
+  color: #999;
+}
+#wrappper #content .contentMain #center #right .rightTop .priceWrap .priceBottom p > span:first-child {
+  background-color: #c81623;
+  padding: 3px;
+  color: #fff;
+}
+#wrappper #content .contentMain #center #right .rightTop .support {
+  margin-top: 10px;
+  line-height: 28px;
+}
+#wrappper #content .contentMain #center #right .rightTop .support::after {
+  clear: both;
+  display: block;
+  content: '';
+}
+#wrappper #content .contentMain #center #right .rightTop .support > span {
+  margin-right: 15px;
+  float: left;
+}
+#wrappper #content .contentMain #center #right .rightTop .support > p {
+  float: left;
+  color: #999;
+}
+#wrappper #content .contentMain #center #right .rightTop .address {
+  border-bottom: 1px solid #ededed;
+  padding-bottom: 5px;
+  margin-top: 10px;
+  line-height: 28px;
+}
+#wrappper #content .contentMain #center #right .rightTop .address::after {
+  clear: both;
+  display: block;
+  content: '';
+}
+#wrappper #content .contentMain #center #right .rightTop .address > span {
+  margin-right: 15px;
+  float: left;
+}
+#wrappper #content .contentMain #center #right .rightTop .address > p {
+  float: left;
+  color: #999;
+}
+#wrappper #content .contentMain #center #right .rightBottom {
+  margin-top: 10px;
+  line-height: 28px;
+}
+#wrappper #content .contentMain #center #right .rightBottom .choose::after {
+  clear: both;
+  display: block;
+  content: '';
+}
+#wrappper #content .contentMain #center #right .rightBottom .choose .mark {
+  height: 30px;
+  background: snow;
+  border: 1px solid #ddd;
+  padding: 0 20px;
+  margin-right: 20px;
+  text-align: center;
+  line-height: 30px;
+  float: left;
+}
+#wrappper #content .contentMain #center #right .rightBottom .choose .mark a {
+  color: red;
+  margin-left: 20px;
+}
+#wrappper #content .contentMain #center #right .rightBottom .chooseWrap dl {
+  margin-top: 13px;
+  margin-bottom: 13px;
+}
+#wrappper #content .contentMain #center #right .rightBottom .chooseWrap dl::after {
+  clear: both;
+  display: block;
+  content: '';
+}
+#wrappper #content .contentMain #center #right .rightBottom .chooseWrap dl dt {
+  margin-right: 15px;
+  float: left;
+}
+#wrappper #content .contentMain #center #right .rightBottom .chooseWrap dl dd {
+  float: left;
+  margin-right: 5px;
+  color: #666;
+  line-height: 24px;
+  padding: 2px 14px;
+  border-top: 1px solid #eee;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+}
+#wrappper #content .contentMain #center #right .rightBottom .chooseWrap dl dd:first-of-type {
+  color: red;
 }

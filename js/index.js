@@ -115,15 +115,138 @@ window.onload = function () {
         var endPosition = (liNodes.length - 5) * (liNodes[0].offsetWidth + 20)
 
         leftButton.onclick = function () {
-            console.log(1);
-        }
-        rightButton.onclick = function () {
-             start += step
-            if(start < endPosition){
-                ul.style.left += -start + 'px'
-            }else{
-                ul.style.left = endPosition
+            start -= step
+            if (start > 0) {
+                ul.style.left = -start + 'px'
+            } else {
+                start = 0
             }
+        }//understand
+        rightButton.onclick = function () {
+            start += step
+            if (start > endPosition) {
+                start = endPosition
+            } else {
+                ul.style.left = -start + 'px'
+            }
+        }//understand
+    }
+
+    function rightTopData() {
+        var rightTop = document.querySelector('#wrappper #content .contentMain #center #right .rightTop')
+        goodsDetail = goodData.goodsDetail
+        var s = `<h3>${goodsDetail.title}</h3>
+        <p>${goodsDetail.recommend}</p>
+        <div class="priceWrap">
+            <div class="priceTop">
+                <span>价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格</span>
+                <div class="price">
+                    <span>￥</span>
+                    <p>${goodsDetail.price}</p>
+                    <i>降价通知</i>
+                </div>
+                <p>
+                    <span>累计评价</span>
+                    <span>${goodsDetail.evaluateNum}</span>
+                </p>
+            </div>
+            <div class="priceBottom">
+                <span>促&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;销</span>
+                <p>
+                    <span>${goodsDetail.promoteSales.type}</span>
+                    <span>${goodsDetail.promoteSales.content}</span>
+                </p>
+            </div>
+        </div>
+        <div class="support">
+            <span>支&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;持</span>
+            <p>${goodsDetail.support}</p>
+        </div>
+        <div class="address">
+            <span>配&nbsp;送&nbsp;至</span>
+            <p>${goodsDetail.address}</p>
+        </div>`
+        rightTop.innerHTML = s
+    }
+
+    function rightBottomData() {
+        var chooseWrap = document.querySelector('#wrappper #content .contentMain #center #right .rightBottom .chooseWrap')
+        var crumbData = goodData.goodsDetail.crumbData
+
+        for (let i = 0; i < crumbData.length; i++) {
+            var dlNode = document.createElement('dl')
+            var dtNode = document.createElement('dt')
+            dtNode.innerHTML = crumbData[i].title
+            dlNode.appendChild(dtNode)
+            for (let j = 0; j < crumbData[i].data.length; j++) {
+                var ddNode = document.createElement('dd')
+                ddNode.innerHTML = crumbData[i].data[j].type
+                dlNode.appendChild(ddNode)
+            }
+            chooseWrap.appendChild(dlNode)
+        }
+    }
+
+    // function clickDdBind() {
+    //     var dlNode = document.querySelectorAll('#wrappper #content .contentMain #center #right .rightBottom .chooseWrap dl')
+    //     for (let i = 0; i < dlNode.length; i++) {
+    //         (function (i) {
+    //             var ddNode = dlNode[i].querySelectorAll('dd')
+    //             for (let j = 0; j < ddNode.length; j++) {
+    //                 ddNode[j].onclick = function () {
+    //                     for (let n = 0; n < ddNode.length; n++) {
+    //                         ddNode[n].style.color = '#666'
+    //                     }
+    //                     this.style.color = 'red'
+    //                 }
+    //             }
+    //         })(i)
+    //     }
+    // }
+    function clickDdBind() {
+        var dlNode = document.querySelectorAll('#wrappper #content .contentMain #center #right .rightBottom .chooseWrap dl')
+        var choose = document.querySelector('#wrappper #content .contentMain #center #right .rightBottom .choose')
+        var arr =new Array(dlNode.length)
+        arr.fill(0)
+        for (let i = 0; i < dlNode.length; i++) {
+            (function (i) {
+                var ddNode = dlNode[i].querySelectorAll('dd')
+                for (let j = 0; j < ddNode.length; j++) {
+                    ddNode[j].onclick = function () {
+                        choose.innerHTML=''
+                        for (let n = 0; n < ddNode.length; n++) {
+                            ddNode[n].style.color = '#666'
+                        }
+                        this.style.color = 'red'
+                        arr[i]=this.innerText
+                        arr.forEach(function(value,index) {
+                            if (value) {
+                                var markDiv = document.createElement('div')
+                                markDiv.innerText=value
+                                markDiv.className='mark'
+                                var aNode = document.createElement('a')
+                                aNode.innerText='X'
+                                aNode.setAttribute('index',index)
+                                markDiv.appendChild(aNode)
+                                choose.appendChild(markDiv)
+                            }
+                        });
+                        var aNodes = document.querySelectorAll('#wrappper #content .contentMain #center #right .rightBottom .choose .mark a')
+                        for (let k = 0; k < aNodes.length; k++) {
+                            aNodes[k].onclick = function(){
+                                var idx1 = this.getAttribute('index')
+                                arr[idx1] = 0
+                                var ddList = dlNode[idx1].querySelectorAll('dd')
+                                for (let m = 0; m < ddList.length; m++) {
+                                    ddList[m].style.color = '#666'
+                                }
+                                ddList[0].style.color = 'red'
+                                choose.removeChild(this.parentNode)
+                            }
+                        }
+                    }
+                }
+            })(i)
         }
     }
 
@@ -133,5 +256,8 @@ window.onload = function () {
     bigGlassBind()
     thumbnailClick()
     thumbnailLeftRightClick()
+    rightTopData()
+    rightBottomData()
+    clickDdBind()
 
 }
