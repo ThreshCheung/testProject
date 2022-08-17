@@ -181,6 +181,7 @@ window.onload = function () {
             for (let j = 0; j < crumbData[i].data.length; j++) {
                 var ddNode = document.createElement('dd')
                 ddNode.innerHTML = crumbData[i].data[j].type
+                ddNode.setAttribute('price', crumbData[i].data[j].changePrice)
                 dlNode.appendChild(ddNode)
             }
             chooseWrap.appendChild(dlNode)
@@ -206,34 +207,37 @@ window.onload = function () {
     function clickDdBind() {
         var dlNode = document.querySelectorAll('#wrappper #content .contentMain #center #right .rightBottom .chooseWrap dl')
         var choose = document.querySelector('#wrappper #content .contentMain #center #right .rightBottom .choose')
-        var arr =new Array(dlNode.length)
+        var arr = new Array(dlNode.length)
         arr.fill(0)
         for (let i = 0; i < dlNode.length; i++) {
             (function (i) {
                 var ddNode = dlNode[i].querySelectorAll('dd')
                 for (let j = 0; j < ddNode.length; j++) {
                     ddNode[j].onclick = function () {
-                        choose.innerHTML=''
+                        choose.innerHTML = ''
                         for (let n = 0; n < ddNode.length; n++) {
                             ddNode[n].style.color = '#666'
                         }
                         this.style.color = 'red'
-                        arr[i]=this.innerText
-                        arr.forEach(function(value,index) {
+
+                        arr[i] = this
+                        changePriceBind(arr)
+
+                        arr.forEach(function (value, index) {
                             if (value) {
                                 var markDiv = document.createElement('div')
-                                markDiv.innerText=value
-                                markDiv.className='mark'
+                                markDiv.innerText = value.innerText
+                                markDiv.className = 'mark'
                                 var aNode = document.createElement('a')
-                                aNode.innerText='X'
-                                aNode.setAttribute('index',index)
+                                aNode.innerText = 'X'
+                                aNode.setAttribute('index', index)
                                 markDiv.appendChild(aNode)
                                 choose.appendChild(markDiv)
                             }
                         });
                         var aNodes = document.querySelectorAll('#wrappper #content .contentMain #center #right .rightBottom .choose .mark a')
                         for (let k = 0; k < aNodes.length; k++) {
-                            aNodes[k].onclick = function(){
+                            aNodes[k].onclick = function () {
                                 var idx1 = this.getAttribute('index')
                                 arr[idx1] = 0
                                 var ddList = dlNode[idx1].querySelectorAll('dd')
@@ -242,6 +246,7 @@ window.onload = function () {
                                 }
                                 ddList[0].style.color = 'red'
                                 choose.removeChild(this.parentNode)
+                                changePriceBind(arr)
                             }
                         }
                     }
@@ -250,6 +255,45 @@ window.onload = function () {
         }
     }
 
+    function changePriceBind(arr) {
+        var oldPrice = document.querySelector('#wrappper #content .contentMain #center #right .rightTop .priceWrap .priceTop .price p')
+        var price = goodData.goodsDetail.price
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i]) {
+                var changePrice = Number(arr[i].getAttribute('price'))
+                price += changePrice
+            }
+        }
+        oldPrice.innerText = price
+        var leftPrice = document.querySelector('#wrappper #content .contentMain .goodsDetailWrap .rightDetail .chooseBox .listWrap .left p')
+        leftPrice.innerText = '￥' + price
+        var newPrice = document.querySelector('#wrappper #content .contentMain .goodsDetailWrap .rightDetail .chooseBox .listWrap .right i')
+        var ipts = document.querySelectorAll('#wrappper #content .contentMain .goodsDetailWrap .rightDetail .chooseBox .listWrap .middle li input')
+        for (let j = 0; j < ipts.length; j++) {
+            if (ipts[j].checked) {
+                price += Number(ipts[j].value)
+            }
+        }
+        newPrice.innerText = '￥' + price
+    }
+
+    function choosePrice() {
+        var ipts = document.querySelectorAll('#wrappper #content .contentMain .goodsDetailWrap .rightDetail .chooseBox .listWrap .middle li input')
+        var leftPrice = document.querySelector('#wrappper #content .contentMain .goodsDetailWrap .rightDetail .chooseBox .listWrap .left p')
+        var newPrice = document.querySelector('#wrappper #content .contentMain .goodsDetailWrap .rightDetail .chooseBox .listWrap .right i')
+
+        for (let i = 0; i < ipts.length; i++) {
+            ipts[i].onclick = function () {
+                var oldPrice = Number(leftPrice.innerText.slice(1))
+                for (let j = 0; j < ipts.length; j++) {
+                    if (ipts[j].checked) {
+                        oldPrice = oldPrice + Number(ipts[j].value)
+                    }
+                }
+                newPrice.innerText = "￥" + oldPrice
+            }
+        }
+    }
 
     navPathDataBind()
     thumbnailData()
@@ -259,5 +303,6 @@ window.onload = function () {
     rightTopData()
     rightBottomData()
     clickDdBind()
+    choosePrice()
 
 }
