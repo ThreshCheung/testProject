@@ -295,6 +295,34 @@ window.onload = function () {
         }
     }
 
+    //封装一个公共的选项卡函数
+    function tab(tabBtns, tabConts) {
+        for (let i = 0; i < tabBtns.length; i++) {
+            tabBtns[i].index = i
+            tabBtns[i].onclick = function () {
+                for (let j = 0; j < tabBtns.length; j++) {
+                    tabBtns[j].className = ''
+                    tabConts[j].className = ''
+                }
+                this.className = 'active'
+                tabConts[this.index].className = 'active'
+            }
+        }
+    }
+
+    function leftTab(){
+        var h4s = document.querySelectorAll('#wrappper #content .contentMain .goodsDetailWrap .leftAside .asideTop h4')
+        var divs = document.querySelectorAll('#wrappper #content .contentMain .goodsDetailWrap .leftAside .asideContent>div')
+        tab(h4s,divs)
+    }
+
+    function rightTab(){
+        var lis = document.querySelectorAll('#wrappper #content .contentMain .goodsDetailWrap .rightDetail .bottomDetail .tabBtns li')
+        var divs = document.querySelectorAll('#wrappper #content .contentMain .goodsDetailWrap .rightDetail .bottomDetail .tabContent div')
+        tab(lis,divs)
+    }
+
+
     navPathDataBind()
     thumbnailData()
     bigGlassBind()
@@ -304,5 +332,7 @@ window.onload = function () {
     rightBottomData()
     clickDdBind()
     choosePrice()
+    leftTab()
+    rightTab()
 
 }

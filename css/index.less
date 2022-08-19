@@ -519,7 +519,9 @@
                         padding: 10px;
 
                         div {
+                            display: none;
                             &.active {
+                                display: block;
                                 ul {
                                     &.goodsList1 {
                                         li {
@@ -571,8 +573,9 @@
                     float: right;
 
                     .chooseBox {
-                        border:  1px solid #ddd;
+                        border: 1px solid #ddd;
                         margin-bottom: 15px;
+
                         h4 {
                             border: 1px solid #ddd;
                             background: #f1f1f1;
@@ -583,12 +586,14 @@
                         .listWrap {
                             height: 170px;
                             padding-top: 10px;
+
                             .left {
                                 width: 127px;
                                 height: 165px;
                                 float: left;
                                 position: relative;
                                 text-align: center;
+
                                 img {
                                     width: 87px;
                                     margin: 0 auto;
@@ -612,20 +617,24 @@
                                 height: 165px;
                                 float: left;
                                 text-align: center;
+
                                 li {
                                     width: 127px;
                                     margin-left: 20px;
                                     margin-right: 20px;
                                     float: left;
+
                                     img {
                                         width: 120px;
                                         height: 130px;
                                     }
 
-                                    > span {}
-                                    div{
-                                        input{}
-                                        span{}
+                                    >span {}
+
+                                    div {
+                                        input {}
+
+                                        span {}
                                     }
 
                                 }
@@ -637,20 +646,24 @@
                                 height: 165px;
                                 padding-left: 20px;
                                 float: left;
-                                div{
+
+                                div {
                                     margin-top: 10px;
                                     margin-bottom: 10px;
                                 }
-                                p{
+
+                                p {
                                     font-weight: bold;
                                     margin-bottom: 10px;
                                 }
-                                i{
+
+                                i {
                                     color: #b1191a;
                                     font-size: 16px;
                                     margin-bottom: 10px;
                                 }
-                                button{
+
+                                button {
                                     padding: 10px 25px;
                                     font-size: 16px;
                                     color: white;
@@ -660,6 +673,47 @@
                             }
                         }
 
+                    }
+
+                    .bottomDetail {
+                        .tabBtns {
+                            background: #ededed;
+                            .clearfix();
+
+                            li {
+                                border-top: 1px solid #ddd;
+                                border-bottom: 1px solid #ddd;
+                                border-right: 1px solid #ddd;
+                                background: #fff;
+                                padding-left: 11px;
+                                padding-right: 11px;
+                                height: 40px;
+                                float: left;
+                                text-align: center;
+                                line-height: 40px;
+                                &.active{
+                                    background: red;
+                                    a{
+                                        color: #fff;
+                                    }
+                                }
+                                &:first-child{
+                                    border-left: 1px solid #ddd;
+                                }
+                            }
+                        }
+
+                        .tabContent {
+                            div {
+                                padding-left: 20px;
+                                line-height: 25px;
+                                display: none;
+                                &.active{
+                                    margin: 10px 0;
+                                    display: block;
+                                }
+                            }
+                        }
                     }
                 }
             }
